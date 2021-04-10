@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <table>
+        <tbodiy>
+            <tr>
+                {% for product in products %}
+                    {% if loop.index is divisible by(3) %}
+                        <td>{{ product }}</td></tr>
+                        <tr>
+                    {% else %}
+                        <td>{{ product }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    {{ dump(products) }}
+{% endblock %}
